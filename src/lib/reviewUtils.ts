@@ -7,15 +7,15 @@ export interface Review {
     timestamp: number;
 }
 
-const STORAGE_KEY = "anushka_reviews";
+const STORAGE_KEY = "kanika_reviews";
 
 const INITIAL_REVIEWS: Review[] = [
     { id: "1", name: "Rahul K.", rating: 5, text: "sexy ekdum pura maal nikal diya", timestamp: Date.now() },
     { id: "2", name: "Suresh P.", rating: 5, text: "Video quality ekdum top notch hai. Sab kuch ekdum private aur secure rehta hai.", timestamp: Date.now() },
     { id: "3", name: "Vikram M.", rating: 5, text: "Recorded videos ki quality real 4K hai. Paisa vasool!", timestamp: Date.now() },
-    { id: "4", name: "Ankit S.", rating: 5, text: "Bhai log, Anushka real hai aur bahut hi acchha cum karati hai", timestamp: Date.now() },
+    { id: "4", name: "Ankit S.", rating: 5, text: "Bhai log, Kanika real hai aur bahut hi acchha cum karati hai", timestamp: Date.now() },
     { id: "5", name: "Deepak J.", rating: 5, text: "Payment smoothly ho gaya aur 5 min ke andar call connect ho gayi.", timestamp: Date.now() },
-    { id: "6", name: "Sameer T.", rating: 5, text: "Anushka ne bahut maza dilaya. one day i will fuck you", timestamp: Date.now() }
+    { id: "6", name: "Sameer T.", rating: 5, text: "Kanika ne bahut maza dilaya. one day i will fuck you", timestamp: Date.now() }
 ];
 
 export const getReviews = (): Review[] => {

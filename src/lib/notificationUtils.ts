@@ -10,7 +10,7 @@ export interface Notification {
     timestamp: string;
 }
 
-const STORAGE_KEY = 'anushka_notification';
+const STORAGE_KEY = 'kanika_notification';
 
 export const getNotification = (): Notification | null => {
     const data = localStorage.getItem(STORAGE_KEY);

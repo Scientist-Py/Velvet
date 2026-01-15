@@ -11,16 +11,17 @@ const Payment = () => {
   const [agreedToTerms, setAgreedToTerms] = useState(false);
   const [qrCodeDataURL, setQrCodeDataURL] = useState<string>("");
 
-  const { total, service, details } = location.state || {
+  const { total, service, details, description } = location.state || {
     total: 0,
     service: "Consultation",
     details: "",
+    description: "",
   };
 
   useEffect(() => {
     const generateQRCode = async () => {
       try {
-        const upiId = "ayushiraoo@ybl";
+        const upiId = "kanikachauhan@airtel";
         const upiString = `upi://pay?pa=${upiId}&am=${total}&cu=INR&tn=Content Payment`;
         const qrCodeDataURL = await QRCode.toDataURL(upiString, {
           width: 512,
@@ -43,8 +44,8 @@ const Payment = () => {
 
   const handlePayment = () => {
     if (agreedToTerms) {
-      const currentRevenue = parseInt(localStorage.getItem("anushka_revenue") || "0");
-      localStorage.setItem("anushka_revenue", (currentRevenue + total).toString());
+      const currentRevenue = parseInt(localStorage.getItem("kanika_revenue") || "0");
+      localStorage.setItem("kanika_revenue", (currentRevenue + total).toString());
       navigate("/verification");
     }
   };
@@ -99,6 +100,14 @@ const Payment = () => {
                     <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Outfit Selected</span>
                     <p className="font-bold">{detailParts[2] || 'Not Specified'}</p>
                   </div>
+                  {description && (
+                    <div className="bg-primary/5 border border-primary/20 rounded-2xl p-4 mt-4">
+                      <div className="text-[10px] font-black text-primary/60 uppercase tracking-widest mb-1 italic">Personal Note from Kanika</div>
+                      <p className="text-xs text-gray-700 dark:text-zinc-300 font-bold leading-relaxed">
+                        {description}
+                      </p>
+                    </div>
+                  )}
                   {details.includes('4K quality') && (
                     <div className="bg-green-500/10 border border-green-500/20 rounded-xl p-3 flex items-center gap-2">
                       <ShieldCheck className="w-4 h-4 text-green-600" />
@@ -168,7 +177,7 @@ const Payment = () => {
               <div className="bg-primary/5 rounded-2xl p-4 text-center border border-primary/10 mb-8 space-y-1">
                 <span className="text-[10px] font-black uppercase tracking-widest text-primary/60">Payable Amount</span>
                 <p className="text-4xl font-black text-primary leading-none">₹{total}</p>
-                <p className="text-[11px] font-medium text-muted-foreground tracking-wide mt-2">UPI ID: <span className="text-black font-bold">ayushiraoo@ybl</span></p>
+                <p className="text-[11px] font-medium text-muted-foreground tracking-wide mt-2">UPI ID: <span className="text-black font-bold">kanikachauhan@airtel</span></p>
               </div>
 
               <div className="space-y-6">

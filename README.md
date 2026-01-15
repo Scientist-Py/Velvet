@@ -1,4 +1,4 @@
-# Anushka Video Calls
+# KANIKA CHAUHAN Video Calls
 
 Professional video call sessions with flexible pricing and secure payment.
 
@@ -41,4 +41,4 @@ This project is ready for deployment to any hosting platform that supports React
 
 ## Custom Domain
 
-The project is configured to work with the custom domain: **anushka.com**
+The project is configured to work with the custom domain: **kanika.com**

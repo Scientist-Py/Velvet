@@ -5,8 +5,8 @@ import { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { initializeChats, formatTimeAgo, ChatMessage } from "@/lib/chatUtils";
 import { getReviews, Review } from "@/lib/reviewUtils";
-import videoCallBg from "../components/SaveClip.App_559453078_17894459628335791_1669631404230936057_n.jpg";
-import recordedBg from "../components/SaveClip.App_590889507_17900658735335791_6705053405610076337_n.jpg";
+const videoCallBg = "/kanika/video_call.jpg";
+const recordedBg = "/kanika/recording.jpg";
 import FAQSection from "@/components/FAQSection";
 import NotificationModal from "@/components/NotificationModal";
 
@@ -33,8 +33,9 @@ const Index = () => {
       navigate("/payment", {
         state: {
           total: total,
-          service: "Premium Live Group Access",
-          details: "WhatsApp • 1 Month Validity • 30 Photos & 3 Videos Daily"
+          service: "Premium VIP WhatsApp Group",
+          details: "WhatsApp • 1 Month Validity • Daily Content",
+          description: "Join my VIP WhatsApp group for 1 month. You will get daily 30+ tease and nude images and 3+ tease videos—enough to make you cum daily in my new dresses! 💋"
         }
       });
     }, 1500); // Reduced delay slightly
@@ -42,10 +43,10 @@ const Index = () => {
 
   useEffect(() => {
     // Increment visitor count
-    const currentVisitors = parseInt(localStorage.getItem("anushka_visitors") || "0");
-    localStorage.setItem("anushka_visitors", (currentVisitors + 1).toString());
+    const currentVisitors = parseInt(localStorage.getItem("kanika_visitors") || "0");
+    localStorage.setItem("kanika_visitors", (currentVisitors + 1).toString());
 
-    localStorage.setItem("anushka_visitors", (currentVisitors + 1).toString());
+    localStorage.setItem("kanika_visitors", (currentVisitors + 1).toString());
 
 
 
@@ -77,7 +78,7 @@ const Index = () => {
           <div className="relative w-24 h-24 mb-8">
             <div className="absolute inset-0 border-4 border-primary/30 rounded-full animate-ping"></div>
             <div className="absolute inset-0 border-4 border-t-primary rounded-full animate-spin"></div>
-            <img src="/SaveClip.App_583245147_17899753089335791_1619758458747494755_n.jpg" className="absolute inset-2 rounded-full object-cover" />
+            <img src="/kanika/kanika_6.jpeg" className="absolute inset-2 rounded-full object-cover" />
           </div>
           <h2 className="text-2xl font-bold text-white animate-pulse">Connecting Securely...</h2>
           <p className="text-muted-foreground text-sm mt-2">Please wait while we redirect you to payment.</p>
@@ -93,8 +94,8 @@ const Index = () => {
             </span>
             VERIFIED CREATOR
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-primary via-primary to-blue-500 bg-clip-text text-transparent">
-            ANUSHKA VIDEO CALLS
+          <h1 className="text-5xl md:text-7xl font-black mb-4 bg-gradient-to-r from-primary via-purple-500 to-blue-600 bg-clip-text text-transparent tracking-tighter">
+            KANIKA CHAUHAN • EXCLUSIVE FAN APP
           </h1>
           <p className="text-muted-foreground text-lg mb-8 uppercase tracking-[0.2em] font-medium text-primary/80">
             Your private spot for naughty fantasies & live sessions 💋
@@ -136,23 +137,14 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Circular Video */}
+          {/* Main Hero Image */}
           <div className="max-w-3xl mx-auto mb-12 flex flex-col items-center">
             <div className="relative group">
               <div className="w-64 h-64 rounded-full overflow-hidden shadow-[0_0_50px_rgba(234,56,76,0.3)] border-4 border-primary/20 transition-all duration-500 group-hover:border-primary/50 group-hover:shadow-[0_0_60px_rgba(234,56,76,0.5)]">
-                <video
-                  src="/anushkavideo.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover"
-                  style={{
-                    objectPosition: 'center',
-                    transform: 'scale(1.2)',
-                    minWidth: '100%',
-                    minHeight: '100%'
-                  }}
+                <img
+                  src="/kanika/main.png"
+                  alt="Kanika Chauhan"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
               </div>
               <div className="absolute top-4 right-4 bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded-full border-2 border-background animate-pulse flex items-center gap-1 shadow-lg">
@@ -192,28 +184,45 @@ const Index = () => {
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {/* Video Call Card */}
           <Link to="/video-call" className="group">
-            <div className="glass-card rounded-3xl overflow-hidden shadow-soft hover:shadow-medium transition-smooth transform hover:scale-[1.02]">
-              <div className="h-48 bg-gradient-to-br from-primary/20 to-blue-500/20 relative flex items-center justify-center overflow-hidden">
+            <div className="glass-card rounded-[2.5rem] overflow-hidden shadow-2xl hover:shadow-primary/20 transition-all duration-500 transform hover:scale-[1.02] border border-white/20">
+              <div className="relative overflow-hidden w-full h-[350px] md:h-[420px]">
                 <div
-                  className="absolute inset-0 backdrop-blur-3xl opacity-50 bg-cover bg-center"
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 scale-105"
                   style={{ backgroundImage: `url(${videoCallBg})` }}
                 ></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
-                <Video className="w-12 h-12 text-white relative z-10 animate-bounce" />
-                <div className="absolute bottom-4 left-4 z-10">
-                  <span className="bg-primary text-white text-[10px] font-bold px-2 py-1 rounded-md">LIVE 🔞</span>
+
+                {/* Action Tags */}
+                <div className="absolute top-6 left-6 z-10">
+                  <span className="bg-primary text-white text-[11px] font-black px-5 py-2 rounded-full shadow-2xl shadow-primary/50 border border-white/30 animate-pulse">
+                    LIVE 🔞
+                  </span>
                 </div>
+
+                <div className="absolute top-6 right-6 z-10">
+                  <div className="bg-black/20 backdrop-blur-xl p-3 rounded-full border border-white/20 shadow-xl">
+                    <Video className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+
+                {/* Bottom image gradient for label visibility */}
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 to-transparent"></div>
               </div>
-              <div className="p-8">
-                <h2 className="text-2xl font-bold mb-3">Live Nude Call</h2>
-                <p className="text-muted-foreground mb-6 text-sm">
-                  Full nude, explicit, and teasing sessions. I will eat your whole cum my BADDIES.
-                </p>
-                <div className="space-y-2 text-xs text-muted-foreground mb-6 font-medium text-primary/70 italic">
-                  <span>— Fingering, Moaning, & Cumming Included 💦</span>
+
+              <div className="p-8 bg-white dark:bg-zinc-900/95 relative">
+                <div className="mb-4">
+                  <h2 className="text-3xl font-black tracking-tighter text-gray-900 dark:text-white">Tease Video Call</h2>
                 </div>
-                <Button className="w-full font-bold h-12" size="lg">
-                  Book A Nude Call Now
+                <p className="text-gray-600 dark:text-zinc-400 mb-6 text-sm leading-relaxed font-medium">
+                  Full nude, explicit, and teasing sessions. I will eat your whole cum my <span className="text-primary font-bold italic">BADDIES.</span>
+                </p>
+                <div className="bg-primary/5 dark:bg-white/5 rounded-2xl p-4 mb-6 border border-primary/10 dark:border-white/5">
+                  <div className="text-[10px] font-black text-primary/60 dark:text-primary/40 uppercase tracking-widest mb-1">Session Includes</div>
+                  <p className="text-xs text-gray-700 dark:text-zinc-300 font-bold italic">
+                    Fingering, Moaning, & Cumming Included 💦
+                  </p>
+                </div>
+                <Button className="w-full font-black h-16 rounded-[1.25rem] text-xl shadow-xl shadow-primary/20 hover:shadow-primary/40 transition-all" variant="gradient">
+                  Book A Tease Call Now
                 </Button>
               </div>
             </div>
@@ -221,27 +230,44 @@ const Index = () => {
 
           {/* Recorded Video Card */}
           <Link to="/recorded-video" className="group">
-            <div className="glass-card rounded-3xl overflow-hidden shadow-soft hover:shadow-medium transition-smooth transform hover:scale-[1.02]">
-              <div className="h-48 bg-gradient-to-br from-purple-500/20 to-pink-500/20 relative flex items-center justify-center overflow-hidden">
+            <div className="glass-card rounded-[2.5rem] overflow-hidden shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 transform hover:scale-[1.02] border border-white/20">
+              <div className="relative overflow-hidden w-full h-[350px] md:h-[420px]">
                 <div
-                  className="absolute inset-0 backdrop-blur-3xl opacity-50 bg-cover"
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 scale-105"
                   style={{ backgroundImage: `url(${recordedBg})`, backgroundPosition: 'center 20%' }}
                 ></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
-                <Film className="w-12 h-12 text-white relative z-10 animate-pulse" />
-                <div className="absolute bottom-4 left-4 z-10">
-                  <span className="bg-purple-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">4K QUALITY</span>
+
+                {/* Action Tags */}
+                <div className="absolute top-6 left-6 z-10">
+                  <span className="bg-purple-600 text-white text-[11px] font-black px-5 py-2 rounded-full shadow-2xl shadow-purple-900/50 border border-white/30">
+                    4K QUALITY
+                  </span>
                 </div>
+
+                <div className="absolute top-6 right-6 z-10">
+                  <div className="bg-black/20 backdrop-blur-xl p-3 rounded-full border border-white/20 shadow-xl">
+                    <Film className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+
+                {/* Bottom image gradient for label visibility */}
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 to-transparent"></div>
               </div>
-              <div className="p-8">
-                <h2 className="text-2xl font-bold mb-3">Recorded Content</h2>
-                <p className="text-muted-foreground mb-6 text-sm">
-                  Watch me in high intensity,nude recorded videos. 4K quality with bonus nude photos.
-                </p>
-                <div className="space-y-2 text-xs text-muted-foreground mb-6 font-medium text-purple-400 italic">
-                  <span>— 40+ Nude Photos FREE (45 min Plan) 📸</span>
+
+              <div className="p-8 bg-white dark:bg-zinc-900/95 relative">
+                <div className="mb-4">
+                  <h2 className="text-3xl font-black tracking-tighter text-gray-900 dark:text-white">Recorded Content</h2>
                 </div>
-                <Button className="w-full font-bold h-12" size="lg" variant="secondary">
+                <p className="text-gray-600 dark:text-zinc-400 mb-6 text-sm leading-relaxed font-medium">
+                  Watch me in high intensity, nude recorded videos. 4K quality with bonus nude photos.
+                </p>
+                <div className="bg-purple-500/5 dark:bg-purple-500/5 rounded-2xl p-4 mb-6 border border-purple-500/10">
+                  <div className="text-[10px] font-black text-purple-600/60 dark:text-purple-400/40 uppercase tracking-widest mb-1">VIP Exclusive</div>
+                  <p className="text-xs text-gray-700 dark:text-purple-300 font-bold italic">
+                    40+ Nude Photos FREE (45 min Plan) 📸
+                  </p>
+                </div>
+                <Button className="w-full font-black h-16 rounded-[1.25rem] text-xl shadow-xl shadow-purple-500/20 hover:shadow-purple-500/40 transition-all" variant="secondary">
                   Order My Fantasy Video
                 </Button>
               </div>
@@ -257,42 +283,30 @@ const Index = () => {
             </div>
             <h2 className="text-3xl font-bold mb-4">My Private Gallery 📸</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Check out these real shots of Anushka. No fake profiles, no filters—just 100% pure beauty for your trust.
+              Check out these real shots of Kanika. No fake profiles, no filters—just 100% pure beauty for your trust.
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {[
-              "/IMG_20251225_110255_157.webp",
-              "/SaveClip.App_542898438_17891614770335791_4568971459979116340_n.jpg",
-              "/SaveClip.App_543351725_17891614746335791_4501057502712227281_n.jpg",
-              "/SaveClip.App_573711049_17898310224335791_7201884703612400426_n.jpg",
-              "/SaveClip.App_583245147_17899753089335791_1619758458747494755_n.jpg"
+              "/kanika/kanika_1.jpeg",
+              "/kanika/kanika_2.jpeg",
+              "/kanika/kanika_3.jpeg",
+              "/kanika/kanika_4.jpeg",
+              "/kanika/kanika_5.jpeg",
+              "/kanika/kanika_6.jpeg"
             ].map((url, index) => (
               <div
                 key={index}
                 onClick={proceedToPayment}
                 className="relative group aspect-[3/4] overflow-hidden rounded-2xl glass-card border border-white/10 cursor-pointer"
               >
-                {/* Image with Blur */}
+                {/* Image without Blur */}
                 <img
                   src={url}
-                  alt={`Anushka ${index + 1}`}
-                  className="w-full h-full object-cover transition-all duration-700 blur-[8px] group-hover:blur-[4px] scale-110 group-hover:scale-100"
+                  alt={`Kanika ${index + 1}`}
+                  className="w-full h-full object-cover transition-all duration-700 scale-110 group-hover:scale-100"
                 />
-
-                {/* Lock Overlay */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/20 group-hover:bg-black/10 transition-colors duration-500">
-                  <div className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center mb-2 transform group-hover:scale-110 transition-transform duration-500">
-                    <Lock className="w-6 h-6 text-white" />
-                  </div>
-                  <span className="text-[10px] font-bold text-white uppercase tracking-[0.2em] drop-shadow-lg">Unlock Full Album</span>
-                </div>
-
-                {/* Bottom Label */}
-                <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-white text-[10px] font-bold uppercase tracking-widest">Join VIP Group 🔥</span>
-                </div>
               </div>
             ))}
           </div>
@@ -374,7 +388,7 @@ const Index = () => {
         {/* Footer */}
         <div className="text-center mt-16 text-sm text-muted-foreground border-t border-white/5 pt-8">
           <p className="mb-2">✨ Official Platform • 18+ Only • Privacy Guaranteed</p>
-          <p>© 2024 Anushka Video Calls. All rights reserved.</p>
+          <p>© 2024 KANIKA CHAUHAN Video Calls. All rights reserved.</p>
         </div>
       </div>
 
@@ -404,12 +418,12 @@ const Index = () => {
               <div className="relative">
                 <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20 shadow-md p-0.5 bg-white">
                   {/* CHANGE CHATBOT IMAGE HERE */}
-                  <img src="/SaveClip.App_583245147_17899753089335791_1619758458747494755_n.jpg" alt="Anushka" className="w-full h-full object-cover rounded-full" />
+                  <img src="/kanika/kanika_6.jpeg" alt="Kanika" className="w-full h-full object-cover rounded-full" />
                 </div>
                 <div className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 border-2 border-white rounded-full animate-pulse"></div>
               </div>
               <div>
-                <h3 className="font-bold text-base text-gray-900 flex items-center gap-1">Anushka <CheckCircle className="w-4 h-4 text-blue-500 fill-blue-500/10" /></h3>
+                <h3 className="font-bold text-base text-gray-900 flex items-center gap-1">Kanika <CheckCircle className="w-4 h-4 text-blue-500 fill-blue-500/10" /></h3>
                 <p className="text-[11px] text-green-600 font-bold tracking-wide flex items-center gap-1">
                   <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span> Online Now
                 </p>

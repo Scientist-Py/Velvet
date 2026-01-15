@@ -7,7 +7,7 @@ export interface ChatMessage {
     avatar?: string; // Optional avatar initialization
 }
 
-const STORAGE_KEY = "anushka_live_chats_v2";
+const STORAGE_KEY = "kanika_live_chats_v2";
 // Chat utility functions - managing persistent chat storage
 
 

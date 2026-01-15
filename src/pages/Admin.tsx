@@ -67,9 +67,9 @@ const Admin = () => {
 
     useEffect(() => {
         // Read real stats from localStorage
-        const savedLeads = JSON.parse(localStorage.getItem("anushka_leads") || "[]");
-        const savedVisitors = parseInt(localStorage.getItem("anushka_visitors") || "0");
-        const savedRevenue = parseInt(localStorage.getItem("anushka_revenue") || "0");
+        const savedLeads = JSON.parse(localStorage.getItem("kanika_leads") || "[]");
+        const savedVisitors = parseInt(localStorage.getItem("kanika_visitors") || "0");
+        const savedRevenue = parseInt(localStorage.getItem("kanika_revenue") || "0");
 
         setLeads(savedLeads);
         setVisitors(savedVisitors);
@@ -136,7 +136,7 @@ const Admin = () => {
 
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
-        if (username === "anushka.midnight" && password === "123456") {
+        if (username === "kanika.midnight" && password === "123456") {
             setIsAuthenticated(true);
             setError("");
         } else {
@@ -162,7 +162,7 @@ const Admin = () => {
                 <div className="glass-card w-full max-w-md p-8 rounded-3xl border border-primary/20 bg-zinc-900/40 backdrop-blur-xl">
                     <div className="text-center mb-8">
                         <h1 className="text-3xl font-bold text-primary mb-2">Admin Panel</h1>
-                        <p className="text-zinc-400">Secure Access for Anushka Midnight</p>
+                        <p className="text-zinc-400">Secure Access for Kanika Midnight</p>
                     </div>
                     <form onSubmit={handleLogin} className="space-y-6">
                         <div className="space-y-2">
@@ -200,7 +200,7 @@ const Admin = () => {
             {/* Sidebar */}
             <div className="w-64 border-r border-zinc-800 bg-[#0a0a0a] p-6 hidden md:flex flex-col gap-8 fixed h-full z-10">
                 <div className="text-xl font-bold bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">
-                    ANUSHKA ADMIN
+                    KANIKA ADMIN
                 </div>
                 <nav className="space-y-2 flex-grow">
                     <Button onClick={() => scrollToSection('dashboard')} variant="ghost" className="w-full justify-start gap-3 bg-zinc-900/50 text-white font-medium hover:bg-primary/20 hover:text-primary">
@@ -610,9 +610,9 @@ const Admin = () => {
                                     {currentNotification && currentNotification.active ? (
                                         <div className="w-full">
                                             <div className={`w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse ${currentNotification.type === 'alert' ? 'bg-red-500/20 text-red-500' :
-                                                    currentNotification.type === 'success' ? 'bg-green-500/20 text-green-500' :
-                                                        currentNotification.type === 'promo' ? 'bg-yellow-500/20 text-yellow-500' :
-                                                            'bg-primary/20 text-primary'
+                                                currentNotification.type === 'success' ? 'bg-green-500/20 text-green-500' :
+                                                    currentNotification.type === 'promo' ? 'bg-yellow-500/20 text-yellow-500' :
+                                                        'bg-primary/20 text-primary'
                                                 }`}>
                                                 <Bell className="w-6 h-6" />
                                             </div>

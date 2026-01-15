@@ -32,7 +32,7 @@ const FAQSection = () => {
                         Is this a real video call?
                     </AccordionTrigger>
                     <AccordionContent className="text-muted-foreground leading-relaxed pb-4">
-                        Yes! If you book a <span className="text-white font-bold">Live Naughty Call</span>, it is 100% real-time interactions with Anushka. For the "Recorded Video" plan, you receive a pre-made high-quality video.
+                        Yes! If you book a <span className="text-white font-bold">Live Naughty Call</span>, it is 100% real-time interactions with Kanika. For the "Recorded Video" plan, you receive a pre-made high-quality video.
                     </AccordionContent>
                 </AccordionItem>
 
