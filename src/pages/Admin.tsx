@@ -215,9 +215,7 @@ const Admin = () => {
                     <Button onClick={() => scrollToSection('chat-control')} variant="ghost" className="w-full justify-start gap-3 text-zinc-400 hover:text-white hover:bg-zinc-800">
                         <MessageSquare className="w-5 h-5" /> Live Chat
                     </Button>
-                    <Button onClick={() => scrollToSection('reviews-control')} variant="ghost" className="w-full justify-start gap-3 text-zinc-400 hover:text-white hover:bg-zinc-800">
-                        <Users className="w-5 h-5" /> Reviews
-                    </Button>
+
                     <Button onClick={() => scrollToSection('settings')} variant="ghost" className="w-full justify-start gap-3 text-zinc-400 hover:text-white hover:bg-zinc-800">
                         <Settings className="w-5 h-5" /> Settings
                     </Button>
@@ -460,71 +458,7 @@ const Admin = () => {
                     </div>
                 </div>
 
-                {/* Review Management Section */}
-                <div id="reviews-control" className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
-                    {/* Add Review Form */}
-                    <div className="glass-card rounded-3xl border border-zinc-800 p-8 h-fit bg-zinc-900">
-                        <h3 className="text-xl font-bold mb-6 flex items-center gap-2 text-white"><ArrowUpRight className="text-yellow-500" /> Add Client Review</h3>
-                        <form onSubmit={handleAddReview} className="space-y-6">
-                            <div className="space-y-2">
-                                <label className="text-sm font-medium ml-1 text-zinc-400">Client Name</label>
-                                <Input
-                                    placeholder="e.g. Rahul Sharma"
-                                    value={reviewName}
-                                    onChange={(e) => setReviewName(e.target.value)}
-                                    className="bg-zinc-800 border-zinc-700 h-12 rounded-xl focus:border-yellow-500 text-white placeholder:text-zinc-500"
-                                />
-                            </div>
-                            <div className="space-y-2">
-                                <label className="text-sm font-medium ml-1 text-zinc-400">Rating (1-5)</label>
-                                <Input
-                                    type="number"
-                                    min="1"
-                                    max="5"
-                                    value={reviewRating}
-                                    onChange={(e) => setReviewRating(parseInt(e.target.value))}
-                                    className="bg-zinc-800 border-zinc-700 h-12 rounded-xl focus:border-yellow-500 text-white placeholder:text-zinc-500"
-                                />
-                            </div>
-                            <div className="space-y-2">
-                                <label className="text-sm font-medium ml-1 text-zinc-400">Review Text</label>
-                                <textarea
-                                    className="w-full h-32 bg-zinc-800 border border-zinc-700 rounded-xl p-4 text-white placeholder:text-zinc-500 focus:border-yellow-500 focus:outline-none resize-none text-base"
-                                    placeholder="Write the review here..."
-                                    value={reviewText}
-                                    onChange={(e) => setReviewText(e.target.value)}
-                                />
-                            </div>
-                            <Button type="submit" className="w-full h-12 text-lg font-bold shadow-lg shadow-yellow-500/20 text-black hover:bg-yellow-400" style={{ backgroundColor: '#eab308' }}>
-                                Post Review
-                            </Button>
-                        </form>
-                    </div>
 
-                    {/* Review List */}
-                    <div className="glass-card rounded-3xl border border-zinc-800 overflow-hidden flex flex-col h-[600px] bg-zinc-900">
-                        <div className="p-6 border-b border-zinc-800 flex justify-between items-center bg-zinc-900/50">
-                            <div>
-                                <h3 className="text-xl font-bold flex items-center gap-2 text-white">User Reviews</h3>
-                                <p className="text-zinc-400 text-xs">Live on website.</p>
-                            </div>
-                            <span className="text-xs font-mono text-zinc-400 bg-zinc-800 px-2 py-1 rounded">{reviews.length} reviews</span>
-                        </div>
-                        <div className="flex-grow overflow-y-auto p-4 space-y-3 bg-black/40">
-                            {reviews.map((review) => (
-                                <div key={review.id} className="bg-zinc-800/40 border border-zinc-800 p-4 rounded-xl">
-                                    <div className="flex justify-between items-start mb-2">
-                                        <div className="font-bold text-white">{review.name}</div>
-                                        <div className="text-yellow-500 text-xs text-right">
-                                            {"★".repeat(review.rating)}
-                                        </div>
-                                    </div>
-                                    <p className="text-zinc-300 text-sm italic">"{review.text}"</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
 
                 {/* Notification Management Section */}
                 <div id="notification-control" className="mb-20">

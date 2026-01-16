@@ -136,13 +136,80 @@ const RecordedVideo = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 space-y-12">
+            {/* Step 0: Quick Selection */}
+            <section>
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-3">
+                  <span className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold">⭐</span>
+                  <h2 className="text-2xl font-bold">Recommended Packs</h2>
+                </div>
+                <span className="text-xs font-bold text-primary bg-primary/10 px-3 py-1 rounded-full border border-primary/20">PRE-MAPPING</span>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <button
+                  onClick={() => {
+                    setDuration("25");
+                    setDressType("Stripping Black Saree");
+                  }}
+                  className="p-5 rounded-3xl border-2 border-border hover:border-primary/50 transition-all text-center flex flex-col items-center gap-3 bg-card hover:bg-accent/50 group"
+                >
+                  <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-xl group-hover:scale-110 transition-transform">📸</div>
+                  <div className="space-y-1">
+                    <h3 className="font-bold">Mini Tease</h3>
+                    <p className="text-[10px] text-muted-foreground uppercase font-black">25 Min • Saree</p>
+                  </div>
+                  <div className="text-xl font-black text-primary mt-auto">₹579</div>
+                </button>
+
+                <button
+                  onClick={() => {
+                    setDuration("35");
+                    setDressType("Stripping Red Saree");
+                  }}
+                  className="p-5 rounded-3xl border-2 border-primary bg-primary/5 transition-all text-center flex flex-col items-center gap-3 relative overflow-hidden group scale-105 shadow-xl shadow-primary/10"
+                >
+                  <div className="absolute top-0 right-0 bg-primary text-[8px] font-black text-white px-3 py-1 rounded-bl-xl uppercase tracking-tighter">Value</div>
+                  <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-xl group-hover:scale-110 transition-transform text-white">🔥</div>
+                  <div className="space-y-1">
+                    <h3 className="font-bold">Hardcore Pack</h3>
+                    <p className="text-[10px] text-primary/80 uppercase font-black">35 Min • Dildo Play</p>
+                  </div>
+                  <div className="text-xl font-black text-primary mt-auto">₹888</div>
+                </button>
+
+                <button
+                  onClick={() => {
+                    setDuration("45");
+                    setDressType("Custom");
+                  }}
+                  className="p-5 rounded-3xl border-2 border-border hover:border-primary/50 transition-all text-center flex flex-col items-center gap-3 bg-card hover:bg-accent/50 group"
+                >
+                  <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-xl group-hover:scale-110 transition-transform">💎</div>
+                  <div className="space-y-1">
+                    <h3 className="font-bold">VIP Mega Pack</h3>
+                    <p className="text-[10px] text-muted-foreground uppercase font-black">45 Min • 4K UHD</p>
+                  </div>
+                  <div className="text-xl font-black text-primary mt-auto">₹1348</div>
+                </button>
+              </div>
+            </section>
+
+            <div className="relative">
+              <div className="absolute inset-0 flex items-center" aria-hidden="true">
+                <div className="w-full border-t border-border"></div>
+              </div>
+              <div className="relative flex justify-center text-xs uppercase">
+                <span className="bg-background px-4 text-muted-foreground font-bold tracking-widest">Or Build Custom Video</span>
+              </div>
+            </div>
+
             {/* Step 1: Duration */}
             <section>
               <div className="flex items-center gap-3 mb-6">
-                <span className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold">1</span>
+                <span className="w-8 h-8 rounded-full bg-secondary text-muted-foreground flex items-center justify-center font-bold">1</span>
                 <h2 className="text-2xl font-bold">How long should the video be?</h2>
               </div>
-              <div className="grid gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <SelectionCard
                   selected={duration === "25"}
                   onClick={() => setDuration("25")}
@@ -174,7 +241,7 @@ const RecordedVideo = () => {
             {/* Step 2: Dress Type */}
             <section>
               <div className="flex items-center gap-3 mb-6">
-                <span className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold">2</span>
+                <span className="w-8 h-8 rounded-full bg-secondary text-muted-foreground flex items-center justify-center font-bold">2</span>
                 <h2 className="text-2xl font-bold">Choose the outfit</h2>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
